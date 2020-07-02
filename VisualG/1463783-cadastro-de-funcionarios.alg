@@ -1,7 +1,7 @@
-//  FaÃ§a um algoritmo que imprima nome, idade, sexo, salario e a quantidade de
-//salarios minimos. Considere o salÃ¡rio mÃ­nimo no valor de 1045.00.
-//Depois faÃ§a um diagrama de fluxo BPM.
-algoritmo "Cadastro de funcionÃ¡rios"
+//  Faça um algoritmo que imprima nome, idade, sexo, salario e a quantidade de
+//salarios mínimos. Considere o salário mínimo no valor de 1045.00.
+//Depois faça um diagrama de fluxo BPM.
+algoritmo "Cadastro de funcionários"
 var
    nomes: vetor[1..5] de caractere
    sexos: vetor[1..5] de caractere
@@ -14,11 +14,11 @@ var
    parada: caractere
 inicio
    ALEATORIO 1, 1000
-   escreval("  CADASTRO DE FUNCIONÃRIO  ")
+   escreval("  CADASTRO DE FUNCIONÁRIO  ")
    para cod de 1 ate 5 faca
       escreval("")
       escreval("")
-      escreval("Informa os dados do funcionÃ¡rio ", cod:1)
+      escreval("Informa os dados do funcionário ", cod:1)
       escreval(" ")
       escreva ("Nome: ")
       leia(nomes[cod])
@@ -26,23 +26,23 @@ inicio
       leia(sexos[cod])
       escreva ("Idades: ")
       leia(idades[cod])
-      escreva ("SalÃ¡rio: ")
+      escreva ("Salário: ")
       leia(salarios[cod])
    fimPara
    ALEATORIO off
 
    escreval("")
    escreval("")
-   escreva ("Pressione ENTER para listar os funcionÃ¡rios")
+   escreva ("Pressione ENTER para listar os funcionários")
    leia(parada)
    LimpaTela()
 
    para i de 1 ate 5 faca
-      escreval("FUNCIONÃRIO :", i)
+      escreval("FUNCIONÁRIO :", i)
       escreval("Nome   : ", nomes[i])
       escreval("Sexo   : ", sexos[i])
       escreval("Idade  : ", idades[i]:1)
-      escreval("SalÃ¡rio: ", salarios[i]:1:2)
+      escreval("Salário: ", salarios[i]:1:2)
       leia(parada)
    fimPara
 

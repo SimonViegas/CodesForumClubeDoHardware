@@ -29,6 +29,6 @@ inicio
       fimSe
    fimPara
 
-   escreva (nomes[indiceMenorAltura], " Ã© o(a) mais baixo(a) da lista, com ")
+   escreva (nomes[indiceMenorAltura], " é o(a) mais baixo(a) da lista, com ")
    escreval(alturas[indiceMenorAltura]:1:2, " metros de altura")
 fimAlgoritmo
