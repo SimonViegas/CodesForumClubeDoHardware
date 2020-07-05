@@ -1,34 +1,37 @@
 algoritmo "Vetores - Menor altura"
+tipo
+   t_Pessoa = registro
+                nome: caractere
+                altura: real
+              fimRegistro
 var
-   nomes: vetor[1..3] de caractere
-   alturas: vetor[1..3] de real
+   pessoas: vetor[1..3] de t_Pessoa
    posicao: inteiro
-
    indiceMenorAltura: inteiro
    i: inteiro
 inicio
    para posicao de 1 ate 3 faca
       escreva("Digite o seu nome: ")
-      leia(nomes[posicao])
+      leia(pessoas[posicao].nome)
       escreva("Digite a sua altura: ")
-      leia(alturas[posicao])
+      leia(pessoas[posicao].altura)
       limpaTela
    fimPara
 
    escreval("       REGISTROS        ")
    para i de 1 ate posicao faca
-      escreval("Nome  : ", nomes[i])
-      escreval("Altura: ", alturas[i]:1:2)
+      escreval("Nome  : ", pessoas[i].nome)
+      escreval("Altura: ", pessoas[i].altura:1:2)
       escreval("")
    fimpara
 
    indiceMenorAltura := 1
    para i de 1 ate posicao faca
-      se (alturas[i] < alturas[indiceMenorAltura]) entao
+      se (pessoas[i].altura < pessoas[indiceMenorAltura].altura) entao
          indiceMenorAltura <- i
       fimSe
    fimPara
 
-   escreva (nomes[indiceMenorAltura], " é o(a) mais baixo(a) da lista, com ")
-   escreval(alturas[indiceMenorAltura]:1:2, " metros de altura")
+   escreva (pessoas[indiceMenorAltura].nome, " é o(a) mais baixo(a) da lista, com ")
+   escreval(pessoas[indiceMenorAltura].altura:1:2, " metros de altura")
 fimAlgoritmo
