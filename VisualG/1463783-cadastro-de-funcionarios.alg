@@ -47,3 +47,6 @@ inicio
    fimPara
 
 fimAlgoritmo
+{
+https://www.clubedohardware.com.br/topic/1463783-VisualG
+}

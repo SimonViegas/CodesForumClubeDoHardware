@@ -35,3 +35,6 @@ inicio
    escreva (pessoas[indiceMenorAltura].nome, " é o(a) mais baixo(a) da lista, com ")
    escreval(pessoas[indiceMenorAltura].altura:1:2, " metros de altura")
 fimAlgoritmo
+{
+https://www.clubedohardware.com.br/topic/1462383-VisualG
+}
