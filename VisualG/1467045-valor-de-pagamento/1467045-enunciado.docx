@@ -1,0 +1,2 @@
+2. Faça um programa para a loja do TIO BENÉ que use a função valorPagamento para determinar o valor a ser pago por uma prestação de uma conta.
+2.1 O programa deverá solicitar ao usuário atendente o nome do cliente, o valor da prestação e o número de dias em atraso e passar estes valores para a função valorPagamento, que calculará o valor a ser pago e devolverá este valor ao programa que a chamou.
