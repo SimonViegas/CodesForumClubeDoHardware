@@ -35,3 +35,6 @@ begin
   writeln('E a média geral da turma é: ', mediaGeral:1:2);  
   readln;
 end.
+{
+https://www.clubedohardware.com.br/topic/1435189-Pascal
+}

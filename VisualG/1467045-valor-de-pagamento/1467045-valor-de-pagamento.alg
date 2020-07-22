@@ -37,25 +37,47 @@ var
    diasAtraso: inteiro
 
    valorASerPago: real
-
+   qtdCliente: inteiro
+   
+   pause: caractere
 inicio
-   //2.1
-   escreva ("Nome do cliente   : ")
-   leia(nomeCliente)
-   escreva ("Valor da prestação: R$ ")
-   leia(valorPrestacao)
-   escreva ("Dias em atraso    : ")
-   leia(diasAtraso)
+   //2.4
+   qtdCliente <- 0
+   repita
+      //2.1
+      limpaTela()
+      qtdCliente <- qtdCliente + 1
+      escreva ("Nome do cliente   : ")
+      leia(nomeCliente)
+      escreva ("Valor da prestação: R$ ")
+      leia(valorPrestacao)
 
-   //2.3
-   valorASerPago <- valorPagamento(valorPrestacao, diasAtraso)
+      se (valorPrestacao = 0) entao
+         interrompa
+      fimSe
 
+      escreva ("Dias em atraso    : ")
+      leia(diasAtraso)
 
+      //2.3
+      valorASerPago <- valorPagamento(valorPrestacao, diasAtraso)
+      //2.3 fim
+      //2.1 fim
 
-   //2.2
-   escreval("")
-   escreval("Nome do cliente : ", nomeCliente)
-   escreval("Valor a ser pago: R$ ", valorASerPago:1:2)
+      //2.2
+      escreval("")
+      escreval("Nome do cliente : ", nomeCliente)
+      escreval("Valor a ser pago: R$ ", valorASerPago:1:2)
+      
+      escreval
+      escreva ("Pressione ENTER para continuar...")
+      leia(pause)
+   //2.6
+   ate (qtdCliente > 20)
+   //2.5
+   //em construção
+
+   escreval("Fim")
 fimAlgoritmo
 {
 https://www.clubedohardware.com.br/topic/1467045-VisualG

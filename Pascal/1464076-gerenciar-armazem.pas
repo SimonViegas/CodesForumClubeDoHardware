@@ -37,3 +37,6 @@ writeln('Armazém ', codArmazem:1, ': ', vet_armazem_qtdProduto[codArmazem, codP
 
 ReadKey();
 END.
+{
+https://www.clubedohardware.com.br/topic/1464076-Pascal
+}
