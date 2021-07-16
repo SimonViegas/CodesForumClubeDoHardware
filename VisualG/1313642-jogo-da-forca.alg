@@ -7,103 +7,94 @@ var
 
 funcao derrota(x : inteiro) : inteiro
 inicio
-   Escreval("============================================================")
-   escreval("============================================================")
-   escreval
-   escreval(" --------- FIM  DE JOGO! ------- ")
-   ESCREVAL
-   ESCREVAL(" --------- GAME OVER =( ------- ")
-   ESCREVAL
-   Escreval("============================================================")
-   escreval("============================================================")
+   escrevaL("============================================================")
+   escrevaL("============================================================")
+   escrevaL
+   escrevaL(" --------- FIM  DE JOGO! ------- ")
+   escrevaL
+   escrevaL(" --------- GAME OVER =( ------- ")
+   escrevaL
+   escrevaL("============================================================")
+   escrevaL("============================================================")
    retorne x+1   // aqui ele retorna um valor
 fimfuncao
 
 funcao vitoria(x : inteiro) : inteiro
 inicio
-   Escreval("============================================================")
-   escreval("============================================================")
-   escreval
-   escreval(" --------- PARABÉNS VOCÊ VENCEU! ------- ")
-   ESCREVAL
-   Escreval("============================================================")
-   escreval("============================================================")
+   escrevaL("============================================================")
+   escrevaL("============================================================")
+   escrevaL
+   escrevaL(" --------- PARABÉNS VOCÊ VENCEU! ------- ")
+   escrevaL
+   escrevaL("============================================================")
+   escrevaL("============================================================")
    retorne x+1   // aqui ele retorna um valor
 fimfuncao
 
 procedimento desenhaForca()
+var
+   i: inteiro
 inicio
+   escrevaL("============================================================")
+   escrevaL("============================================================")
+   escrevaL("")
+   escrevaL   ("    /-----|")
+   escrevaL   ("   /      |")
    se (ne > 0 ) entao
-      escreval("  /     (x.x)")
-   senao
-      escreval("  /")
-   fimse
-
+      escrevaL("  /     (x.x)    ")
+   fimSe
    se (ne > 1 ) entao
-      escreval(" |      __||__  ")
-   senao
-      escreval(" |   ")
-   fimse
-
+      escrevaL(" |      __||__   ")
+   fimSe
    se (ne > 2 ) entao
-      escreval(" |     /|     |\\")
-   senao
-      escreval(" |   ")
-   fimse
-
+      escrevaL(" |     /|     |\ ")
+   fimSe
    se (ne > 3) entao
-      escreval(" |   /  |_____| \\")
-   senao
-      escreval(" |   ")
-   fimse
-
+      escrevaL(" |   /  |_____| \")
+   fimSe
    se (ne > 4) entao
-      escreval(" |       ||  ||")
-   senao
-      escreval(" |      ")
-   fimse
-
+      escrevaL(" |       ||  ||  ")
+   fimSe
    se (ne > 5) entao
-      escreval(" |      _|| _||")
-   senao
-      escreval(" |     ")
-   fimse
+      escrevaL(" |      _|| _||  ")
+   fimSe
+
+   para i de 1 ate 6-ne faca
+      escreval(" |")
+   fimPara
 
    se (ne > 6) entao
-      escreval(" |     |__||__|")
-      escreval("=====                ULTIMA CHANCE! ")
+      escrevaL(" |     |__||__|  ")
+      escrevaL("=====                ULTIMA CHANCE! ")
    senao
-      escreval(" |    ")
-      escreval("=====               ")
-   fimse
+      escrevaL(" |               ")
+      escrevaL("=====            ")
+   fimSe
 fimProcedimento
 
 inicio
-   aleatorio on  // ativa o modo aleatorio fonte, palavra on é opcional
-   aleatorio 1,7 // seleciona o ranger do aleatorio, é preciso definir para o comando ter as opção para escolha
-   leia (frutas) // todo leia vai ser lançado um numero aleatorio nesse caso de 1 a 3
-   aleatorio off  // desativa o modo aleatorio, assim ele escolher uma das opções das palavras.
+   frutas <- Randi(7)+1
 
-   limpatela  // limpa tela
+   LimpaTela()  // limpa tela
 
    repita // (repita 1) repitir o comando ate achar o comando interrompa
-      escreval("---SEJA BEM VINDO---")
-      escreval
-      escreval(" ---JOGO DA FORCA--- ")
-      escreval
-      escreval
-      escreval("Digite 1 para jogar e 0 para sair")
+      escrevaL("---SEJA BEM VINDO---")
+      escrevaL
+      escrevaL(" ---JOGO DA FORCA--- ")
+      escrevaL
+      escrevaL
+      escrevaL("Digite 1 para jogar e 0 para sair")
       leia(op)
       escolha op // verificar qual opção foi selecionada
       caso 0
          escreva("você escolheu a opção 0 para sair")
-         escreval
-         escreval
+         escrevaL
+         escrevaL
          fimAlgoritmo
       caso 1
          interrompa  // para o loop de escolher opção
       outrocaso   // caso digite algo diferente de 0 ou 1 ele vai limpar a tela
-         limpatela   // limpa a tela, e vai voltar para o loop de opção.
+         LimpaTela()   // limpa a tela, e vai voltar para o loop de opção.
       fimescolha
    ate (FALSO)
 
@@ -179,30 +170,24 @@ inicio
 
       se (ne > 7) entao  // Se número de erros for maior que 6 que é o tamanho das palavras logo, jogador perde, ou seja, jogador possui 6 chances apenas.
          b <- derrota(b)
-      fimse
+      fimSe
 
       se (ld1 <> "_") e (ld2 <> "_") e (ld3 <> "_") e (ld4 <> "_") e (ld5 <> "_") e (ld6 <> "_") e (ld7 <> "_") entao // Se as linhas forem diferentes de _ significa que existe letra no local,
          a <- vitoria(b)
-      fimse
+      fimSe
 
-      limpatela
-
-      Escreval("============================================================")
-      escreval("============================================================")
-      escreval("")
-      escreval("    /-----|")
-      escreval("   /      |")
+      LimpaTela()
 
       desenhaForca()
 
-      escreval("")
-      escreval("Acertos: ",na)
-      escreval("Erros: ",ne)
-      escreval("")
+      escrevaL("")
+      escrevaL("Acertos: ",na)
+      escrevaL("Erros: ",ne)
+      escrevaL("")
       escreva("Palavra com 7 letras:     ",ld1," ",ld2," ",ld3," ",ld4," ",ld5," ",ld6," ",ld7)
-      Escreval("")
-      escreval("Dica da palavra: FRUTA ")
-      escreval
+      escrevaL("")
+      escrevaL("Dica da palavra: FRUTA ")
+      escrevaL
       escreva("digite uma letra: ")
 
       leia(dig)
@@ -213,49 +198,49 @@ inicio
          ld1 <- dig
          na <- na + 1
          verifica <- "1"
-      fimse
+      fimSe
 
       se (l2 = dig) e (ld2 = "_") entao
          ld2 <- dig
          na <- na + 1
          verifica <- "1"
-      fimse
+      fimSe
 
       se (l3 = dig) e (ld3 = "_") entao
          ld3 <- dig
          na <- na + 1
          verifica <- "1"
-      fimse
+      fimSe
 
       se (l4 = dig) e (ld4 = "_") entao
          ld4 <- dig
          na <- na + 1
          verifica <-  "1"
-      fimse
+      fimSe
 
       se (l5 = dig) e (ld5 = "_") entao
          ld5 <- dig
          na <- na + 1
          verifica <- "1"
-      fimse
+      fimSe
 
       se (l6 = dig) e (ld6 = "_") entao
          ld6 <- dig
          na <- na + 1
          verifica <- "1"
-      fimse
+      fimSe
 
       se (l7 = dig) e (ld7 = "_") entao
          ld7 <- dig
          na <- na + 1
          verifica <- "1"
-      fimse
+      fimSe
 
       se (verifica = "0") entao
          ne <- ne + 1
-      fimse
+      fimSe
 
-      escreval("==============================================================")
-      escreval("==============================================================")
+      escrevaL("==============================================================")
+      escrevaL("==============================================================")
    ate (FALSO) //só para fazer rodar
 fimalgoritmo
