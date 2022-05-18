@@ -1,5 +1,6 @@
 algoritmo "Gerenciador de reservas de quartos"
-
+const
+   TAM = 60
 procedimento inicializarQuartos()
 var
    i :inteiro
@@ -8,6 +9,40 @@ inicio
       quartos[i] <- " "
    fimPara
 fimProcedimento
+
+procedimento listarQuartos()
+var
+   i :inteiro
+inicio
+   quartos[1] <- "x"
+   para i de 1 ate 20 faca
+      escreva (" Q", i:2, "[", quartos[i]:1, "]")
+      se (i mod 8 = 0) entao
+         escrevaL("")
+      fimSe
+   fimPara
+   escrevaL("")
+   escrevaL("")
+
+   para i de 21 ate 40 faca
+      escreva (" Q", i:2, "[", quartos[i]:1, "]")
+      se ((i-20) mod 8 = 0) entao
+         escrevaL("")
+      fimSe
+   fimPara
+   escrevaL("")
+   escrevaL("")
+
+   para i de 41 ate TAM faca
+      escreva (" Q", i:2, "[", quartos[i]:1, "]")
+      se ((i-40) mod 8 = 0) entao
+         escrevaL("")
+      fimSe
+   fimPara
+   escrevaL("")
+   escrevaL("")
+fimProcedimento
+
 
 procedimento exibirItensMenu()
 inicio
@@ -26,7 +61,8 @@ var
 inicio
    inicializarQuartos()
    enquanto (opcao <> "q") faca
-      exibirItensMenu() ")
+      listarQuartos()
+      exibirItensMenu()
       escreva ("-> ")
       leia(opcao)
    fimEnquanto
