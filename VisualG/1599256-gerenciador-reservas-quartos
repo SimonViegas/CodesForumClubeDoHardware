@@ -1,0 +1,53 @@
+algoritmo "Gerenciador de reservas de quartos"
+
+procedimento inicializarQuartos()
+var
+   i :inteiro
+inicio
+   para i de 1 ate 60 faca
+      quartos[i] <- " "
+   fimPara
+fimProcedimento
+
+var
+   quartos :vetor[1..60] de caractere
+   i :inteiro
+
+inicio
+   inicializarQuartos()
+
+
+fimAlgoritmo
+{
+https://www.clubedohardware.com.br/forums/topic/1599256-converter-algoritmo-do-programa-portugol-para-visualg
+}
+
+{
+Faça um programa em Portugol Studio para controlar a ocupação de quartos de um
+hotel com 60 quartos. O programa deve ter as seguintes caractereísticas:
+
+Um menu deve ser fornecido para o usuário com as seguintes opções:
+r – para reservar um determinado quarto
+a – para reserva automática de quartos
+d – para liberar um quarto;
+t – para mostrar a taxa de ocupação do hotel
+x – Uma função que vocês vão definir
+q - para sair.
+
+Acima do menu deve ser mostrado uma lista de todos os quartos e se eles estão
+ocupados: se ocupado, mostrar um “X” na frente do número do quarto; caso
+contrário mostrar um espaço em branco “ “.
+Se o usuário tentar reservar um quarto que já está reservado, uma mensagem de
+erro deve ser exibida, indicando que o quarto já está ocupado.
+Sempre que ocorrer uma reserva ou liberação de quarto, a lista de quartos deve
+ser atualizada. Inicialmente todos os quartos devem estar desocupados.
+Mostrar quantos quartos estão ocupados juntamente com a porcentagem de ocupação.
+Mostrar também a taxa de ocupação por andar. Cada andar tem 20 quartos.
+
+Reserva automática: esse tipo de reserva faz com que o programa escolha
+automaticamente um quarto para reserva. O programa deve dar preferência para os
+quartos que estão nos andares que estão com maior ocupação. Crie um
+procedimento para lidar com as mensagens de erro. Após uma mensagem de erro
+peça para o usuário pressionar a tecla ENTER para continuar. Isso pode ser
+feito pelo comando leia(x), onde x é uma variável do tipo caractere.
+}
