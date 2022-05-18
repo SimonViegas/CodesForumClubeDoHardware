@@ -5,9 +5,19 @@ procedimento inicializarQuartos()
 var
    i :inteiro
 inicio
-   para i de 1 ate 60 faca
+   para i de 1 ate TAM faca
       quartos[i] <- " "
    fimPara
+fimProcedimento
+
+procedimento exibirItensMenu()
+inicio
+   escrevaL("r – para reservar um determinado quarto     ")
+   escrevaL("a – para reserva automática de quartos      ")
+   escrevaL("d – para liberar um quarto;                 ")
+   escrevaL("t – para mostrar a taxa de ocupação do hotel")
+   escrevaL("x – ima função que vocês vão definir        ")
+   escrevaL("q - para sair.                              ")
 fimProcedimento
 
 procedimento listarQuartos()
@@ -43,28 +53,44 @@ inicio
    escrevaL("")
 fimProcedimento
 
-
-procedimento exibirItensMenu()
+procedimento reservarQuartoEspecifico()
+var
+   numQuarto :inteiro
 inicio
-   escrevaL("r – para reservar um determinado quarto     ")
-   escrevaL("a – para reserva automática de quartos      ")
-   escrevaL("d – para liberar um quarto;                 ")
-   escrevaL("t – para mostrar a taxa de ocupação do hotel")
-   escrevaL("x – ima função que vocês vão definir        ")
-   escrevaL("q - para sair.                              ")
+   escreval("Qual quarto deseja reservar?")
+   leia(numQuarto)
+
+   escrevaL("")
+   se ((numQuarto >= 1) E (numQuarto <= TAM)) entao
+      se (quartos[numQuarto] = " ") entao
+         quartos[numQuarto] <- "x"
+         escrevaL("Quarto ", numQuarto:1, " reservado com sucesso")
+      senao
+         escrevaL("QUARTO JÁ OCUPADO")
+      fimSe
+   senao
+      escrevaL("Número de quarto inválido")
+   fimSe
 fimProcedimento
 
 var
-   quartos :vetor[1..60] de caractere
+   quartos :vetor[1..TAM] de caractere
    opcao: caractere
 
 inicio
    inicializarQuartos()
    enquanto (opcao <> "q") faca
       listarQuartos()
+      escrevaL("")
       exibirItensMenu()
       escreva ("-> ")
       leia(opcao)
+
+      escrevaL("")
+      escolha opcao
+      caso "r"
+         reservarQuartoEspecifico()
+      fimEscolha
    fimEnquanto
 fimAlgoritmo
 {
@@ -100,3 +126,7 @@ procedimento para lidar com as mensagens de erro. Após uma mensagem de erro
 peça para o usuário pressionar a tecla ENTER para continuar. Isso pode ser
    feito pelo comando leia(x), onde x é uma variável do tipo caractere.
    }
+
+
+
+
