@@ -1,11 +1,16 @@
 algoritmo "Cadastro Ex"
+const
+   MAX = 3
 var
    opcao, opcao2 : inteiro
-   nome, endereco, cpf : caractere
-   telefone, data_nascimento : caractere
+   nomes, enderecos, cpfs : vetor[1..MAX] de caractere
+   telefones, datasNascimentos : vetor[1..MAX] de caractere
+   indice, i : inteiro
    nomePesquisa : caractere
+   achou : logico
    pause : caractere
 inicio
+   indice <- 0
    escrevaL("  =- HOSPITAL ALGUMA COISA AI =-  ")
    //timer(1000)
 
@@ -23,13 +28,14 @@ inicio
 
       escolha opcao
       caso 1
+         indice <- indice+1
          limpaTela()
          escreva ("Nome: ")
-         leia(nome)
+         leia(nomes[indice])
          //escreva ("Endereço:")
          //leia(endereco)
          escreva ("CPF: ")
-         leia(cpf)
+         leia(cpfs[indice])
          //escreva ("Telefone:")
          //leia(telefone)
          //escreva ("Data Nascimento:")
@@ -51,11 +57,18 @@ inicio
             escreva ("Nome : ")
             leia(nomePesquisa)
 
-            se (nomePesquisa = nome) entao
-               escrevaL("Cadastro encontrado")
-               escrevaL("Nome : ", nome)
-               escrevaL("CPF  : ", cpf)
-            senao
+            achou <- FALSO
+
+            para i de 1 ate MAX faca
+               se (nomePesquisa = nomes[i]) entao
+                  achou <- VERDADEIRO
+                  escrevaL("Cadastro encontrado")
+                  escrevaL("Nome : ", nomes[i])
+                  escrevaL("CPF  : ", cpfs[i])
+               fimSe
+            fimPara
+
+            se (NAO achou) entao
                escrevaL("Cadastro não encontrado")
             fimSe
 
