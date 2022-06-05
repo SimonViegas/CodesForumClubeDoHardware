@@ -3,6 +3,8 @@ var
    opcao, opcao2 : inteiro
    nome, endereco, cpf : caractere
    telefone, data_nascimento : caractere
+   nomePesquisa : caractere
+   pause : caractere
 inicio
    escrevaL("  =- HOSPITAL ALGUMA COISA AI =-  ")
    //timer(1000)
@@ -42,6 +44,33 @@ inicio
          //escrevaL("Consultar Telefone - pressione 4")
          //escrevaL("Consultar Data de Nascimento - pressione 5")
          leia(opcao2)
+
+         escolha opcao2
+         caso 1
+            escrevaL("-----CONSULTA POR NOME-----")
+            escreva ("Nome : ")
+            leia(nomePesquisa)
+
+            se (nomePesquisa = nome) entao
+               escrevaL("Cadastro encontrado")
+               escrevaL("Nome : ", nome)
+               escrevaL("CPF  : ", cpf)
+            senao
+               escrevaL("Cadastro não encontrado")
+            fimSe
+
+            escrevaL()
+            escreva ("Pressione ENTER para continuar")
+            leia(pause)
+         caso 2
+            //Em breve
+         caso 3
+            //Em breve
+         caso 4
+            //Em breve
+         caso 5
+            //Em breve
+         fimEscolha
       caso 4
          //Em breve
       caso 5
