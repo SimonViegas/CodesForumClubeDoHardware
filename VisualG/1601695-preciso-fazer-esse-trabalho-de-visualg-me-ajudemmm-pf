@@ -1,0 +1,27 @@
+algoritmo "Exercício 15"
+//Faça um programa que carregue uma matriz 5 x 5 e crie dois vetores de cinco
+//posições cada um, que contenham, respectivamente, as somas das linhas e
+//das colunas da matriz. Escreva a matriz e os vetores criados.
+var
+   matrizNumeros : vetor[1..5, 1..5] de inteiro
+   matrizSomasLinhas : vetor[1..5] de inteiro
+   matrizSomasColunas : vetor[1..5] de inteiro
+   i, j : inteiro
+inicio
+   para i de 1 ate 5 faca
+      para j de 1 ate 5 faca
+         ALEATORIO 1,99
+         leia(matrizNumeros[i,j])
+         ALEATORIO OFF
+      fimPara
+   fimPara
+
+   para i de 1 ate 5 faca
+      para j de 1 ate 5 faca
+         somaLinha <- matrizNumeros[i,j]
+      fimPara
+   fimPara
+
+
+
+fimAlgoritmo
