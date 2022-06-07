@@ -7,25 +7,31 @@ var
    matrizSomasLinhas : vetor[1..5] de inteiro
    matrizSomasColunas : vetor[1..5] de inteiro
    i, j : inteiro
-   somaLinha : inteiro
+   soma : inteiro
 inicio
    para i de 1 ate 5 faca
       para j de 1 ate 5 faca
-         ALEATORIO 1,99
+         ALEATORIO 1,5
          leia(matrizNumeros[i,j])
          ALEATORIO OFF
       fimPara
    fimPara
 
-   escreva ("Soma das linhas: ")
    para i de 1 ate 5 faca
-      escreva (matrizSomasLinhas[i]:1)
-   fimPara
-   
-   escrevaL()
-   escreva ("Soma das colunas: ")
-   para i de 1 ate 5 faca
-      escreva (matrizSomasColunas[i]:1)
+      para j de 1 ate 5 faca
+         escreva (matrizNumeros[i,j])
+      fimPara
+      escrevaL()
    fimPara
 
+   escreva ("Soma das linhas :")
+   para i de 1 ate 5 faca
+      escreva (matrizSomasLinhas[i])
+   fimPara
+
+   escrevaL()
+   escreva ("Soma das colunas:")
+   para i de 1 ate 5 faca
+      escreva (matrizSomasColunas[i])
+   fimPara
 fimAlgoritmo
