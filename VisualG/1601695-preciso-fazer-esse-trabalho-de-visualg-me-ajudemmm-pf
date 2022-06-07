@@ -7,6 +7,7 @@ var
    matrizSomasLinhas : vetor[1..5] de inteiro
    matrizSomasColunas : vetor[1..5] de inteiro
    i, j : inteiro
+   somaLinha : inteiro
 inicio
    para i de 1 ate 5 faca
       para j de 1 ate 5 faca
@@ -16,12 +17,15 @@ inicio
       fimPara
    fimPara
 
+   escreva ("Soma das linhas: ")
    para i de 1 ate 5 faca
-      para j de 1 ate 5 faca
-         somaLinha <- matrizNumeros[i,j]
-      fimPara
+      escreva (matrizSomasLinhas[i]:1)
    fimPara
-
-
+   
+   escrevaL()
+   escreva ("Soma das colunas: ")
+   para i de 1 ate 5 faca
+      escreva (matrizSomasColunas[i]:1)
+   fimPara
 
 fimAlgoritmo
