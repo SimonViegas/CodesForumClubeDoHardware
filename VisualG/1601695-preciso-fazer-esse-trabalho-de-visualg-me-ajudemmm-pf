@@ -24,6 +24,25 @@ inicio
       escrevaL()
    fimPara
 
+   para i de 1 ate 5 faca
+      soma <- 0
+      para j de 1 ate 5 faca
+         soma <- soma + matrizNumeros[i,j]
+      fimPara
+
+      matrizSomasLinhas[i] <- soma
+   fimPara
+
+   para j de 1 ate 5 faca
+      soma <- 0
+      para i de 1 ate 5 faca
+         soma <- soma + matrizNumeros[i,j]
+      fimPara
+
+      matrizSomasColunas[j] <- soma
+   fimPara
+
+
    escreva ("Soma das linhas :")
    para i de 1 ate 5 faca
       escreva (matrizSomasLinhas[i])
